@@ -1,0 +1,27 @@
+name: autostartubuntu
+version: 0.0.2
+summary: Auto Start Ubuntu
+description: This app allows you to shut down your computer and set timer to wake it up
+
+confinement: strict
+base: core18
+grade: stable
+
+slots:
+  dbus-autostartubuntu:
+    interface: dbus
+    bus: session
+    name: io.albertgee.autostartubuntu
+
+apps:
+  autostartubuntu:
+    command: autostartubuntu
+    extensions: [flutter-dev] # Where "master" defines which Flutter channel to use for the build
+    plugs:
+      - network
+
+parts:
+  autostartubuntu:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart # The main entry-point file of the application
