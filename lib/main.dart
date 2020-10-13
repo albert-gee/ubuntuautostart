@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Auto Start Ubuntu',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Ubuntu Auto Start'),
+      home: MyHomePage(title: 'Auto Start Ubuntu'),
     );
   }
 }
@@ -67,14 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
       print(pr.stderr);
     });
 
-  }
-
-  Future _changeWindowSize() async {
-    print(Platform.isLinux);
-
-    setState(() {
-
-    });
   }
 
   final _formKey = GlobalKey<FormState>();
